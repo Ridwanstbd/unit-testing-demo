@@ -1,0 +1,54 @@
+TAP version 14
+# Subtest: a request function, should throws error when given by error url
+    not ok 1 - expected to reject
+      ---
+      at:
+        fileName: src\js\index.test.js
+        lineNumber: 5
+        columnNumber: 12
+        typeName: Test
+      diff: |
+        --- expected
+        +++ actual
+        @@ -1,1 +1,3 @@
+        -Error: Network error!
+        +Error: Network error {
+        +  "name": "Error",
+        +}
+      source: "\r
+      
+        test('a request function, should throws error when given by error url',async
+        (assert)=>{\r
+      
+        \    assert.rejects(()=> request('http://error.com'), new Error('Network
+        error!'))\r
+      
+        -----------^
+      
+        })\n"
+      ...
+    
+    1..1
+not ok 1 - a request function, should throws error when given by error url # time=127.421ms
+  ---
+  at:
+    fileName: src\js\index.test.js
+    lineNumber: 4
+    columnNumber: 1
+    isToplevel: true
+  source: "import { test } from \"tap\"\r
+  
+    \r
+  
+    test('a request function, should throws error when given by error url',async
+    (assert)=>{\r
+  
+    ^
+  
+    \    assert.rejects(()=> request('http://error.com'), new Error('Network
+    error!'))\r
+  
+    })\n"
+  ...
+
+1..1
