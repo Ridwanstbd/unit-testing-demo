@@ -1,4 +1,4 @@
-const sum = require("./index.js")
-const assert = require("assert")
+import sum from "./index.js"
+import { equal } from "assert"
 
-assert.equal(sum(1,3),3)
+equal(sum(1,3),3)
